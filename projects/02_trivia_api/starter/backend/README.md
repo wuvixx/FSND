@@ -94,7 +94,7 @@ GET '/categories'
 
 ### GET /categories
 **General:**
-* Returns a list of category objects, and a success value.<br><a/>
+* Returns a list of category objects, and a success value.<br><br>
 **Sample:** `curl http://127.0.0.1:5000/categories`
 ```
 {"categories":{"1":"Science","2":"Art","3":"Geography","4":"History","5":"Entertainment","6":"Sports"},"success":true}
@@ -103,7 +103,7 @@ GET '/categories'
 ### GET /questions
 **General:**
 * Returns a list of question objects, success value, and a total number of questions.
-* Results are paginated in groups of 8. Include a request argument to choose page number, starting from 1.<br><a/>
+* Results are paginated in groups of 8. Include a request argument to choose page number, starting from 1.<br><br>
 **Sample:** `curl http://127.0.0.1:5000/questions`
 ```
 {"categories":{"1":"Science","2":"Art","3":"Geography","4":"History","5":"Entertainment","6":"Sports"},"currentCategory":null,"questions":[{"answer":"Apollo 13","category":"5","difficulty":4,"id":2,"question":"What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"},{"answer":"Tom Cruise","category":"5","difficulty":4,"id":4,"question":"What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"},{"answer":"Maya Angelou","category":"4","difficulty":2,"id":5,"question":"Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"},{"answer":"Edward Scissorhands","category":"5","difficulty":3,"id":6,"question":"What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"},{"answer":"Muhammad Ali","category":"4","difficulty":1,"id":9,"question":"What boxer's original name is Cassius Clay?"},{"answer":"Brazil","category":"6","difficulty":3,"id":10,"question":"Which is the only team to play in every soccer World Cup tournament?"},{"answer":"Uruguay","category":"6","difficulty":4,"id":11,"question":"Which country won the first ever soccer World Cup in 1930?"},{"answer":"George Washington Carver","category":"4","difficulty":2,"id":12,"question":"Who invented Peanut Butter?"},{"answer":"Lake Victoria","category":"3","difficulty":2,"id":13,"question":"What is the largest lake in Africa?"},{"answer":"The Palace of Versailles","category":"3","difficulty":3,"id":14,"question":"In which royal palace would you find the Hall of Mirrors?"}],"success":true,"total_questions":19}
@@ -111,7 +111,7 @@ GET '/categories'
 
 ### DELETE /questions/[id]
 **General:**
-* Deletes a question, returns a success value, and the id of the question deleted.<br><a/>
+* Deletes a question, returns a success value, and the id of the question deleted.<br><br>
 **Sample:** `curl -X DELETE http://127.0.0.1:5000/questions/2`
 ```
 {"question":2,"success":true}
@@ -120,7 +120,7 @@ GET '/categories'
 ### POST /questions
 **General:**
 * Submits a new question, returns success value, and the id of the submitted question.
-* Expects JSON data containing the question, answer, category id and difficulty id.<br><a/>
+* Expects JSON data containing the question, answer, category id and difficulty id.<br><br>
 **Sample:** `curl -X POST -H "Content-Type: application/json" \
 -d '{"question": "How are you?", "answer": "I am okay", "category": "1", "difficulty": "1"}' \
 http://127.0.0.1:5000/questions`
@@ -131,7 +131,7 @@ http://127.0.0.1:5000/questions`
 ### POST /questions/search
 **General:**
 * Returns a list of questions containing the search keyword(s), a success value, and total questions fetched.
-* Expects JSON data containing the `searchTerm` string.<br><a/>
+* Expects JSON data containing the `searchTerm` string.<br><br>
 **Sample:** `curl -X POST -H "Content-Type: application/json" \
 -d '{"searchTerm": "what"}' \
 http://127.0.0.1:5000/questions/search`
@@ -141,7 +141,7 @@ http://127.0.0.1:5000/questions/search`
 
 ### GET /categories/[category id]/questions
 **General:**
-* Returns a list of questions based on a category, a success value, and total questions fetched.<br><a/>
+* Returns a list of questions based on a category, a success value, and total questions fetched.<br><br>
 **Sample:** `curl http://127.0.0.1:5000/categories/1/questions`
 ```
 {"questions":[{"answer":"The Liver","category":"1","difficulty":4,"id":20,"question":"What is the heaviest organ in the human body?"},{"answer":"Alexander Fleming","category":"1","difficulty":3,"id":21,"question":"Who discovered penicillin?"},{"answer":"Blood","category":"1","difficulty":4,"id":22,"question":"Hematology is a branch of medicine involving the study of what?"},{"answer":"I am okay","category":"1","difficulty":1,"id":26,"question":"How are you?"}],"success":true,"total_questions":4}
@@ -150,7 +150,7 @@ http://127.0.0.1:5000/questions/search`
 ### POST /quizzes
 **General:**
 * Returns the next question given that it is not in the `previous_questions` array, and a success value.
-* Expects JSON data containing a `previous_questions` array for question ids that have already been answered, and a `quiz_category` > `id` category id.<br><a/>
+* Expects JSON data containing a `previous_questions` array for question ids that have already been answered, and a `quiz_category` > `id` category id.<br><br>
 **Sample:** `curl -X POST -H "Content-Type: application/json" \
 -d '{"previous_questions": [21], "quiz_category": {"id": "1"}}' \
 http://127.0.0.1:5000/quizzes`
