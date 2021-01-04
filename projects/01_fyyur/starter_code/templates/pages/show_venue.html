@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="col-sm-6">
 		<h1 class="monospace">
-			{{ venue.name }}
+			{{ venue.name }}<form method="post" action="{{ venue.id }}/delete"><input type="submit" class="btn btn-primary btn-lg btn-block" value="Delete Venue" style="width:200px"></input></form>
 		</h1>
 		<p class="subtitle">
 			ID: {{ venue.id }}
